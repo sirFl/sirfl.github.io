@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport"
-          content=""
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Connecta</title>
 </head>
 <body>
@@ -14,6 +15,8 @@
     <p class="hint">Some little hint</p> <!--Просто текст-подсказка для проверки-->
     <button id="btn" class="button">Show/Hide Main Button</button> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
     <button id="btnED" class="button">Enable/Disable Main Button</button> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
 
@@ -24,7 +27,45 @@
         tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
         tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
         tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры 
+
+        btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+	        if (tg.MainButton.isVisible){ //если кнопка показана 
+		        tg.MainButton.hide() //скрываем кнопку 
+	        }
+            else{ 
+  	            tg.MainButton.show() //показываем 
+            }
+        });
+
+        let btnEnabledDisabled = document.getElementById("btnED"); //получаем кнопку активировать/деактивировать
+        btnED.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+	        if (tg.MainButton.isActive){ //если кнопка показана 
+		        tg.MainButton.setParams({"color": "#E0FFFF"}); //меняем цвет
+		        tg.MainButton.disable() //скрываем кнопку 
+	        }
+	        else{
+		        tg.MainButton.setParams({"color": "#143F6B"}); //меняем цвет
+		        tg.MainButton.enable() //показываем 
+	        }
+        });
+
+        Telegram.WebApp.onEvent('mainButtonClicked', function(){
+	        tg.sendData("some string that we need to send"); 
+	        //при клике на основную кнопку отправляем данные в строковом виде
+        });
+
+        let usercard = document.getElementById("usercard"); //получаем блок usercard 
+
+        let profName = document.createElement('p'); //создаем параграф
+        profName.innerText = `${tg.initDataUnsafe.user.first_name}
+        ${tg.initDataUnsafe.user.last_name}
+        ${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
+        //выдем имя, "фамилию", через тире username и код языка
+        usercard.appendChild(profName); //добавляем 
+
+        let userid = document.createElement('p'); //создаем еще параграф 
+        userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
+        usercard.appendChild(userid); //добавляем
     </script>
  </body>
 
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
