@@ -6,6 +6,10 @@ body {
     margin: 0px 0px;
 }
 
-.header {
+.header-photo{
+    display: flex;
+}
+
+.header-photo img {
     height: 30vh;
 }
