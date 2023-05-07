@@ -26,6 +26,11 @@ body {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
+.down-line{
+    margin: 10px 10px;
+}
+
 .buttons{
     height: 30vh;
     width: 100vw;
