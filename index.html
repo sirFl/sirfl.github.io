@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width">
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <title>Connecta</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.showAlert('Hey bebra')
+    </script>
 </head>
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="header-line">
-                <div class="header-photo">
-                    <img
-                    src="photo.png" 
-                    alt="Фото">
-                    <img
-                    src="photo2.png"
-                    alt="Фото2"
-                </div>
+    <button id="btn" 
+    class="button">Show/Hide Main Button</button>
+    <div class="container">
+        <div class="header-line">
+            <div class="header-photo">
+                <img
+                src="photo.png" 
+                alt="Фото">
+                <img
+                src="photo2.png"
+                alt="Фото2">
             </div>
         </div>
     </div>
-        
- </body>
+</body>
 

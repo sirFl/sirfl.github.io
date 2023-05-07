@@ -1,8 +1,15 @@
-
-
+/*
+var(--tg-theme-text-color)
+var(--tg-theme-hint-color)
+var(--tg-theme-link-color)
+var(--tg-theme-button-color)
+var(--tg-theme-button-text-color)
+var(--tg-theme-secondary-bg-color)
+*/
 body {
     margin: 0;
     background: var(--tg-theme-bg-color);
+    align-items: center;
 }
 
 .header-line {
@@ -14,7 +21,7 @@ body {
 }
 
 .header-photo img {
-    height: 30vh;
+    height: 40vh;
     width: auto;
     max-width: 100vw;
     margin-right: 10px;
