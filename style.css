@@ -27,6 +27,10 @@ body {
     margin-bottom: 10px;
 }
 
+.main-line{
+    margin: 10px 10px;
+}
+
 .down-line{
     margin: 10px 10px;
 }
@@ -48,5 +52,7 @@ body {
 	border-radius: 100%;
 	font-size: 18px;
     width: 20vw;
-    margin-right: 15vw;
+    height: 20vw;
+    margin-right: 5vw;
+    margin-left: 5vw;
 }
