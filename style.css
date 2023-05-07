@@ -9,7 +9,6 @@ var(--tg-theme-secondary-bg-color)
 body {
     margin: 0;
     background: var(--tg-theme-bg-color);
-    align-items: center;
 }
 
 .header-line {
@@ -18,6 +17,7 @@ body {
 
 .header-photo{
     display: flex;
+    justify-content: center;
 }
 
 .header-photo img {
@@ -27,12 +27,21 @@ body {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+.buttons{
+    display: flex;
+    justify-content: center;
+}
 
 .button{
 	background: var(--tg-theme-button-color);
 	color: var(--tg-theme-button-text-color);
-	border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	border-radius: 10%;
 	font-size: 18px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .button:not(:last-child){

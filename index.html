@@ -10,21 +10,12 @@
         let tg = window.Telegram.WebApp;
         tg.expand();
 
-        tg.showAlert('Hey bebra')
-
         btn.addEventListener('click', function(){
-	        if (tg.MainButton.isVisible){ 
-		        tg.MainButton.hide() 
-	        }
-            else{ 
-  	            tg.MainButton.show() 
-            }
+
         });
     </script>
 </head>
 <body>
-    <button id="btn" class="button">Show/Hide Main Button</button>
-
     <div class="container">
         <div class="header-line">
             <div class="header-photo">
@@ -36,6 +27,12 @@
                 alt="Фото2">
             </div>
         </div>
+        <div class="buttons">
+            <button id="btn1" class="button">⬅️</button>
+            <button id="btn2" class="button">🖇️</button>
+            <button id="btn3" class="button">➡️</button>
+        </div>
     </div>
+
 </body>
 
