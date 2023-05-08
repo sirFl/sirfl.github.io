@@ -8,10 +8,14 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
-        tg.expand();
 
         btn.addEventListener('click', function(){
-
+            if tg.isExpanded(){
+                tg.showAlert("Всё и так окей");
+            }
+            else{
+                tg.expand();
+            }
         });
     </script>
 </head>
