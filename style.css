@@ -37,7 +37,7 @@ body {
 
 .buttons{
     height: 30vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,8 +51,8 @@ body {
     align-items: center;
 	border-radius: 100%;
 	font-size: 18px;
-    width: 20vw;
-    height: 20vw;
+    width: 20vmin;
+    height: 20vmin;
     margin-right: 5vw;
     margin-left: 5vw;
 }
